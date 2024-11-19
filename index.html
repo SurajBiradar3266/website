@@ -1,26 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Have a Good Day!</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe Online</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .board {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-gap: 5px;
+            justify-content: center;
+        }
+        .cell {
+            width: 100px;
+            height: 100px;
+            background-color: #f0f0f0;
+            font-size: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .cell.taken {
+            cursor: not-allowed;
+        }
+        #status {
+            margin-top: 20px;
+            font-size: 1.2rem;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1 class="greeting">Hello!</h1>
-    <p class="message">Wishing you a <span class="highlight">wonderful day</span> filled with smiles, laughter, and joy!</p>
-    <img src="https://source.unsplash.com/300x300/?flowers,smile" alt="Smiling Flowers" class="image">
-    <p class="closing">Remember, you're amazing! 💛</p>
-    <button class="share-btn" onclick="shareMessage()">Share the Love</button>
-  </div>
-  <script>
-    function shareMessage() {
-      const message = "🌟 Someone thought of you! 🌟 Have a wonderful day filled with happiness and joy. 💛";
-      navigator.share 
-        ? navigator.share({ text: message })
-        : alert("Sharing not supported on this browser. Copy this message: " + message);
-    }
-  </script>
+    <h1>Tic-Tac-Toe Online</h1>
+    <div class="board" id="board"></div>
+    <p id="status">Waiting for Player...</p>
+
+    <script src="script.js"></script>
 </body>
 </html>
