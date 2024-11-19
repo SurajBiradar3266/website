@@ -3,23 +3,81 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Have a Good Day!</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>What Makes Me Smile</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+      background: #fff;
+      border-radius: 15px;
+      padding: 20px 40px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      width: 80%;
+      max-width: 500px;
+    }
+
+    .message {
+      font-size: 1.5rem;
+      margin: 20px 0;
+      display: none; /* Hidden initially */
+    }
+
+    iframe {
+      border: 0;
+      border-radius: 10px;
+      margin-top: 20px;
+      display: none; /* Hidden initially */
+    }
+
+    .reveal-btn {
+      background: #ff6b6b;
+      color: #fff;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .reveal-btn:hover {
+      background: #ff3b3b;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-    <h1 class="greeting">Hello!</h1>
-    <p class="message">Wishing you a <span class="highlight">wonderful day</span> filled with smiles, laughter, and joy!</p>
-    <img src="https://source.unsplash.com/300x300/?flowers,smile" alt="Smiling Flowers" class="image">
-    <p class="closing">Remember, you're amazing! 💛</p>
-    <button class="share-btn" onclick="shareMessage()">Share the Love</button>
+    <h1>What Makes Me Smile?</h1>
+    <button class="reveal-btn" onclick="revealSmile()">Click to Find Out!</button>
+    <p class="message">Dancing with you! 💃🕺</p>
+    <iframe src="https://giphy.com/embed/blSTtZehjAZ8I" 
+            width="480" 
+            height="370" 
+            class="giphy-embed" 
+            allowFullScreen>
+    </iframe>
   </div>
+
   <script>
-    function shareMessage() {
-      const message = "🌟 Someone thought of you! 🌟 Have a wonderful day filled with happiness and joy. 💛";
-      navigator.share 
-        ? navigator.share({ text: message })
-        : alert("Sharing not supported on this browser. Copy this message: " + message);
+    function revealSmile() {
+      // Hide the button
+      const button = document.querySelector('.reveal-btn');
+      button.style.display = 'none';
+      
+      // Show the hidden message and GIF
+      document.querySelector('.message').style.display = 'block';
+      document.querySelector('.giphy-embed').style.display = 'block';
     }
   </script>
 </body>
