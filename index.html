@@ -1,1 +1,26 @@
-#
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Have a Good Day!</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="greeting">Hello!</h1>
+    <p class="message">Wishing you a <span class="highlight">wonderful day</span> filled with smiles, laughter, and joy!</p>
+    <img src="https://source.unsplash.com/300x300/?flowers,smile" alt="Smiling Flowers" class="image">
+    <p class="closing">Remember, you're amazing! 💛</p>
+    <button class="share-btn" onclick="shareMessage()">Share the Love</button>
+  </div>
+  <script>
+    function shareMessage() {
+      const message = "🌟 Someone thought of you! 🌟 Have a wonderful day filled with happiness and joy. 💛";
+      navigator.share 
+        ? navigator.share({ text: message })
+        : alert("Sharing not supported on this browser. Copy this message: " + message);
+    }
+  </script>
+</body>
+</html>
